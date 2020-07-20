@@ -2,15 +2,14 @@ package oop;
 
 import java.util.Calendar;
 
-public class Teacher {
+public class Person {
     public String name;
     public String code;
     public int birthday;
-    public double salary;
 
     // CONSTRUCTOR START
 
-    public Teacher(String vName, String vCode, int vBirthday) {
+    public Person(String vName, String vCode, int vBirthday) {
         this.name = vName;
         this.code = vCode;
         this.birthday = vBirthday;
@@ -30,10 +29,6 @@ public class Teacher {
         this.birthday = vBirthday;
     }
 
-    public void setSalary(double vSalary) {
-        this.salary = vSalary;
-    }
-
     // getter
     public String getName() {
         return this.name;
@@ -47,10 +42,6 @@ public class Teacher {
         return this.birthday;
     }
 
-    public double getSalary() {
-        return this.salary;
-    }
-
     public int getAge() {
         int age = 0;
         Calendar nowCalendar = Calendar.getInstance();
@@ -59,12 +50,13 @@ public class Teacher {
         return age;
     }
 
-    // show Studen info
+    // show Person info
     public void showInfo() {
-        System.out.println("Teacher Info: ");
-        System.out.println("Teacher.birthday---" + this.getBirthday());
-        System.out.println("Teacher.name---" + this.getName());
-        System.out.println("Teacher.code---" + this.getCode());
-        System.out.println("Teacher.age---" + this.getAge());
+        System.out.println("Person Info: ");
+        System.out.println("birthday---" + this.getBirthday());
+        System.out.println("name---" + this.getName());
+        System.out.println("code---" + this.getCode());
+        System.out.println("age---" + this.getAge());
+        System.out.println("------------------------------------");
     }
 }
