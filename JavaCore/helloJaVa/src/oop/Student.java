@@ -1,6 +1,8 @@
 package oop;
 
-public class Student extends Person {
+import java.io.Serializable;
+
+public class Student extends Person implements Serializable {
 
     public Student(String vName, String vCode, int vBirthday) {
         super(vName, vCode, vBirthday);
