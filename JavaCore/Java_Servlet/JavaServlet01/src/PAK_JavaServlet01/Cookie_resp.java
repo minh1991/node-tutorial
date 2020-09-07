@@ -10,25 +10,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = { "/welcome" })
-public class FormLogin_Welcome extends HttpServlet {
-
+@WebServlet(urlPatterns = { "/cookie-resp" })
+public class Cookie_resp extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html");
 		PrintWriter printWriter = resp.getWriter();
-		String nameUser_respString = "";
-		
+
+		// call cookie
 		Cookie[] cookies = req.getCookies();
+		// get data cookie
 		for (Cookie c : cookies) {
-			if (c.getName().equals("userName")) {
-				nameUser_respString = c.getValue();
-			}
+			printWriter.println(c.getName() + " : " + c.getValue());
 		}
-		//
-		if (nameUser_respString.equals("")) {
-			resp.sendRedirect("/JavaServlet01/login-cookie");
-		}
-		printWriter.println("Hello " + nameUser_respString);
 	}
 }
