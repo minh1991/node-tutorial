@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+<meta charset="UTF-8" />
+<title>Hello Word</title>
+<link rel="stylesheet" type="text/css" th:href="@{/Style.css}">
+</head>
+<body>
+	<h1 th:text="#{employee.lish}">template</h1>
+	</p>
+	-------------------------------
+	<p>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th th:text="#{employee.name}"></th>
+			<th th:text="#{employee.age}"></th>
+		</tr>
+		<tr th:each="emp : ${employees}">
+			<td th:text="${emp.employee_id}"></td>
+			<td th:text="${emp.employee_name}"></td>
+			<td th:text="${emp.employee_age}"></td>
+		</tr>
+	</table>
+
+</body>
+</HTML>
