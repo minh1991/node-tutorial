@@ -7,21 +7,30 @@
 </head>
 <body>
 	<h1 th:text="#{employee.lish}">template</h1>
-	</p>
-	-------------------------------
-	<p>
+	<p>-------------------------------</p>
 	<table>
 		<tr>
 			<th>ID</th>
 			<th th:text="#{employee.name}"></th>
 			<th th:text="#{employee.age}"></th>
+			<th th:text="#{employee.type}"></th>
 		</tr>
 		<tr th:each="emp : ${employees}">
 			<td th:text="${emp.employee_id}"></td>
 			<td th:text="${emp.employee_name}"></td>
 			<td th:text="${emp.employee_age}"></td>
+			<td th:if="${emp.employee_age &gt;= 45}" th:text="#{employee.old}"></td>
+			<td th:if="${emp.employee_age &lt; 45 and emp.employee_age &gt;= 25}"
+				th:text="#{employee.medium}"></td>
+			<td th:if="${emp.employee_age &lt; 25}" th:text="#{employee.young}"></td>
 		</tr>
 	</table>
+	<p>-------------------------------</p>
 
+	<form action="" methor="post">
+		<input name="emp_name" type="text"> 
+		<input name="emp_name" type="text">
+		<input type="submit" value="Create">
+	</form>
 </body>
 </HTML>

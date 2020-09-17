@@ -14,8 +14,8 @@ import com.springBootexample.modal.employees_modal;
 
 @Controller
 public class MainController {
-	public static List<employees_modal> employees_ls = Arrays.asList(new employees_modal(1, "A", 25),
-			new employees_modal(2, "B", 28), new employees_modal(3, "C", 27), new employees_modal(4, "D", 30));
+	public static List<employees_modal> employees_ls = Arrays.asList(new employees_modal(1, "A", 55),
+			new employees_modal(2, "B", 28), new employees_modal(3, "C", 24), new employees_modal(4, "D", 30));
 
 	@Autowired
 	Environment environment;
